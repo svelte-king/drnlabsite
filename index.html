@@ -1,212 +1,194 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pishten | Intelligent Laundry Management</title>
-    <style>
-        :root {
-            --accent: #6c5ce7;
-            --bg: #0a0a0f;
-            --surface: #131318;
-            --text: #e8e8f0;
-            --muted: #8a8a9a;
-            --gradient: linear-gradient(135deg, #6c5ce7, #a855f7, #ec4899);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            overflow-x: hidden;
-        }
-
-        .orb {
-            position: fixed;
-            width: 600px;
-            height: 600px;
-            background: var(--gradient);
-            border-radius: 50%;
-            filter: blur(120px);
-            opacity: 0.25;
-            animation: pulse 8s ease-in-out infinite;
-            pointer-events: none;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.2; }
-            50% { transform: scale(1.15); opacity: 0.3; }
-        }
-
-        .container {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            padding: 2rem;
-        }
-
-        .badge {
-            display: inline-block;
-            background: rgba(108, 92, 231, 0.15);
-            border: 1px solid rgba(108, 92, 231, 0.4);
-            color: #a78bfa;
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            padding: 6px 16px;
-            border-radius: 999px;
-            margin-bottom: 2rem;
-            animation: fadeInUp 0.8s ease;
-        }
-
-        h1 {
-            font-size: 4rem;
-            font-weight: 800;
-            letter-spacing: -2px;
-            line-height: 1.1;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 1.5rem;
-            animation: fadeInUp 0.8s ease 0.1s both;
-        }
-
-        .subtitle {
-            font-size: 1.25rem;
-            color: var(--muted);
-            line-height: 1.6;
-            margin-bottom: 3rem;
-            animation: fadeInUp 0.8s ease 0.2s both;
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            margin-bottom: 3rem;
-        }
-
-        .feature-card {
-            background: var(--surface);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 16px;
-            padding: 1.5rem;
-            text-align: left;
-            transition: all 0.3s ease;
-            animation: fadeInUp 0.8s ease 0.3s both;
-        }
-
-        .feature-card:hover {
-            border-color: rgba(108, 92, 231, 0.4);
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(108, 92, 231, 0.15);
-        }
-
-        .feature-icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .feature-title {
-            font-size: 1rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .feature-text {
-            font-size: 0.85rem;
-            color: var(--muted);
-            line-height: 1.5;
-        }
-
-        .cta {
-            display: inline-block;
-            background: var(--gradient);
-            color: white;
-            font-size: 1rem;
-            font-weight: 700;
-            text-decoration: none;
-            padding: 1rem 2.5rem;
-            border-radius: 999px;
-            transition: all 0.3s ease;
-            animation: fadeInUp 0.8s ease 0.4s both;
-        }
-
-        .cta:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 40px rgba(108, 92, 231, 0.5);
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            .features { grid-template-columns: 1fr; }
-        }
-    </style>
-</head>
-<body>
-    <div class="orb"></div>
-
-    <div class="container">
-        <div class="badge">✦ Powered by Intelligence</div>
-        
-        <h1>Laundry,<br>Reimagined.</h1>
-        
-        <p class="subtitle">
-            Pishten leverages cutting-edge technology to streamline your operations.
-            From seamless ticket creation to real-time analytics, experience the future
-            of laundry management — today.
-        </p>
-
-        <div class="features">
-            <div class="feature-card">
-                <div class="feature-icon">⚡</div>
-                <div class="feature-title">Instant Sync</div>
-                <div class="feature-text">
-                    Real-time data synchronization across all devices with zero latency.
-                </div>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🛡️</div>
-                <div class="feature-title">Secure by Default</div>
-                <div class="feature-text">
-                    Enterprise-grade encryption protecting your business data.
-                </div>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">📊</div>
-                <div class="feature-title">Smart Insights</div>
-                <div class="feature-text">
-                    Actionable analytics that help you grow your revenue.
-                </div>
-            </div>
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ironcloth — Gestão de lavanderia, grátis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Serif:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <!-- NAV -->
+      <nav class="nav" id="top">
+        <a class="brand" href="#top">
+          <svg class="logo" viewBox="0 -15 19 95" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M 1 0 L 8 80 L 9 -3 L 6 -4 L 6 -11 L 9 -12 L 8 -15 L 1 -15 L 0 -12 L 3 -11 L 3 -4 L 0 -3 M 10 -1 L 10 -8 L 18 -9 L 19 -6 L 13 -6 L 14 -3 L 19 -3 L 18 0" fill="currentColor"/>
+          </svg>
+          <span>Ironcloth</span>
+        </a>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+        <label for="nav-toggle" class="nav-burger" aria-label="Menu"></label>
+        <div class="nav-links">
+          <a href="#features">Recursos</a>
+          <a href="#how">Como funciona</a>
+          <a href="#download">Baixar</a>
+          <a class="nav-cta" href="#download">Baixar grátis</a>
         </div>
+      </nav>
 
-        <a href="#" class="cta">Get Started Free</a>
+      <!-- HERO -->
+      <header class="hero">
+        <div class="hero-glow"></div>
+        <div class="hero-content">
+          <span class="eyebrow">Gestão de lavanderia · 100% gratuito</span>
+          <h1>Controle sua lavanderia<br />sem complicação.</h1>
+          <p>Gerencie pedidos, clientes e finanças em um só lugar. Um aplicativo de desktop rápido, simples e gratuito — feito para quem lava roupa por encomenda.</p>
+          <div class="hero-actions">
+            <a href="#download" class="btn btn-primary">Baixar grátis</a>
+            <a href="#features" class="btn btn-ghost">Ver recursos</a>
+          </div>
+        </div>
+        <div class="hero-preview">
+          <div class="window">
+            <div class="window-bar">
+              <span class="dot dot-r"></span>
+              <span class="dot dot-y"></span>
+              <span class="dot dot-g"></span>
+            </div>
+            <div class="window-body">
+              <div class="win-sidebar">
+                <div class="win-nav-item active">Pedidos</div>
+                <div class="win-nav-item">Clientes</div>
+                <div class="win-nav-item">Finanças</div>
+                <div class="win-nav-item">Relatórios</div>
+              </div>
+              <div class="win-main">
+                <div class="win-header">Pedidos de hoje</div>
+                <div class="win-row"><span class="win-tag win-tag-accept">Pronto</span> Maria Silva — Lava e dobra</div>
+                <div class="win-row"><span class="win-tag win-tag-warning">Em processo</span> João Pereira — Lavagem a seco</div>
+                <div class="win-row"><span class="win-tag win-tag-reject">Atrasado</span> Café Central — Uniformes</div>
+                <div class="win-row"><span class="win-tag win-tag-accept">Pronto</span> Ana Costa — Passa e engoma</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- STATS -->
+      <section class="stats">
+        <div class="stat"><strong>Grátis</strong><span>sem custo, sem anúncios</span></div>
+        <div class="stat"><strong>Offline</strong><span>funciona sem internet</span></div>
+        <div class="stat"><strong>3</strong><span>plataformas suportadas</span></div>
+        <div class="stat"><strong>0</strong><span>cadastro obrigatório</span></div>
+      </section>
+
+      <!-- FEATURES -->
+      <section id="features" class="section">
+        <div class="section-head">
+          <span class="eyebrow">O que o app faz</span>
+          <h2>Recursos</h2>
+          <p>Tudo que você precisa para administrar uma lavanderia de pequeno e médio porte, num só aplicativo.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+            <div class="card-body">
+              <h3>Controle de pedidos</h3>
+              <p>Registre cada pedido com status, prazo e observações. Acompanhe em tempo real o que está em fila, em processo ou pronto.</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="card-body">
+              <h3>Gestão de clientes</h3>
+              <p>Mantenha um cadastro completo de clientes com histórico de pedidos, preferências e contato. Tudo pesquisável.</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
+            </div>
+            <div class="card-body">
+              <h3>Relatórios e finanças</h3>
+              <p>Veja faturamento, pedidos concluídos e pendências em relatórios claros. Exporte quando precisar.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- HOW IT WORKS -->
+      <section id="how" class="section section-alt">
+        <div class="section-head">
+          <span class="eyebrow">Simples como 1-2-3</span>
+          <h2>Como funciona</h2>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <span class="step-num">1</span>
+            <h3>Baixe o app</h3>
+            <p>Escolha sua plataforma e instale em segundos. Sem cadastro, sem configuração complicada.</p>
+          </div>
+          <div class="step">
+            <span class="step-num">2</span>
+            <h3>Cadastre seus pedidos</h3>
+            <p>Registre clientes e encomendas conforme chegam. O app organiza tudo por status e prazo.</p>
+          </div>
+          <div class="step">
+            <span class="step-num">3</span>
+            <h3>Gerencie com clareza</h3>
+            <p>Acompanhe o fluxo do dia, veja o faturamento e mantenha tudo sob controle num só lugar.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- DOWNLOAD -->
+      <section id="download" class="section">
+        <div class="download-card">
+          <div class="download-content">
+            <span class="eyebrow">Baixar Ironcloth</span>
+            <h2>Pronto para começar?</h2>
+            <p>O Ironcloth é gratuito para sempre. Escolha sua plataforma e comece a usar agora mesmo.</p>
+          </div>
+          <div class="download-buttons">
+            <button class="btn btn-primary btn-lg" type="button">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+              Windows
+            </button>
+            <button class="btn btn-primary btn-lg" type="button">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+              macOS
+            </button>
+            <button class="btn btn-primary btn-lg" type="button">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+              Linux
+            </button>
+          </div>
+          <p class="download-note">Os links de download estarão disponíveis em breve.</p>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="footer-grid">
+          <div>
+            <a class="brand" href="#top">
+              <svg class="logo" viewBox="0 -15 19 95" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M 1 0 L 8 80 L 9 -3 L 6 -4 L 6 -11 L 9 -12 L 8 -15 L 1 -15 L 0 -12 L 3 -11 L 3 -4 L 0 -3 M 10 -1 L 10 -8 L 18 -9 L 19 -6 L 13 -6 L 14 -3 L 19 -3 L 18 0" fill="currentColor"/>
+              </svg>
+              <span>Ironcloth</span>
+            </a>
+            <p class="footer-tag">Gestão de lavanderia, gratuita e simples.</p>
+          </div>
+          <div class="footer-links">
+            <a href="#features">Recursos</a>
+            <a href="#how">Como funciona</a>
+            <a href="#download">Baixar</a>
+          </div>
+          <div class="footer-contact">
+            <p>contato@ironcloth.com.br</p>
+            <p>(11) 91234-5678</p>
+          </div>
+        </div>
+        <p class="footer-bottom">© 2026 Ironcloth. Todos os direitos reservados.</p>
+      </footer>
     </div>
-</body>
+  </body>
 </html>
