@@ -13,16 +13,21 @@
   --font-sans: "IBM Plex Sans", sans-serif;
   --font-serif: "IBM Plex Serif", serif;
 
-  --primary-color: #4c54af;
-  --secondary-color: #d5d5d5;
-  --primary-hover: #32367b;
-  --secondary-hover: #bfbfbf;
-  --primary-dark: #2b2e6a;
-  --primary-light: #6c74d9;
-  --primary-text-blended: #27294f;
+  --color-base: #3e4f6a;
+  --primary-color: var(--color-base);
+  --primary-hover: color-mix(in srgb, var(--color-base) 80%, #000000 20%);
+  --primary-dark: color-mix(in srgb, var(--color-base) 70%, #000000 30%);
+  --primary-light: color-mix(in srgb, var(--color-base) 70%, #ffffff 30%);
+  --primary-text-blended: color-mix(
+    in srgb,
+    var(--color-base) 85%,
+    #000000 15%
+  );
   --bg1: #eeeeee;
   --bg2: #e6e6e6;
   --bg3: #dbdbdb;
+  --secondary-color: #d5d5d5;
+  --secondary-hover: #bfbfbf;
   --border-color: #a9a9a9;
   --border-light-color: #bababa;
   --text-color: #0d0d0d;
